@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './assets/components/Counter'
 import Greet from './assets/components/Greet'
 import Message from './assets/components/Message'
 
@@ -14,6 +15,9 @@ function App() {
       <h2>State</h2>
       <hr/>
       <Message/>
+      <h2>useState</h2>
+      <hr/>
+      <Counter/>
     </>
   )
 }
