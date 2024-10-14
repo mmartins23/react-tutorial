@@ -1,5 +1,5 @@
-const Greet = (props) => {
-    return <h1>Hello {props.name} as {props.heroName}</h1>;
+const Greet = ({ name, heroName }) => {
+    return <h1>Hello {name} as {heroName}</h1>;
 };
 
 
