@@ -5,7 +5,9 @@ function App() {
 
   return (
     <>
-      <Greet />
+      <Greet name="Bruce" heroName="Batman" />
+      <Greet name="Clark" heroName="Superman" />
+      <Greet name="Diana" heroName="Wonder Woman" />
     </>
   )
 }
