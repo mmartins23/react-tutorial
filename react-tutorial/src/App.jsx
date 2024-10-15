@@ -13,6 +13,7 @@ import FormComponent from './components/FormComponent';
 import FormComponent2 from './components/FormComponent2';
 import FormComponent3 from './components/FormComponent3';
 import FormComponent4 from './components/FormComponent4';
+import MyComponent from './components/MyComponent';
 
 function App() {
   const isPrimary = true; // you can change this to `false` to see the effect
@@ -51,6 +52,9 @@ function App() {
       <FormComponent2/>
       <FormComponent3/>
       <FormComponent4/>
+      <h2>Component Lifecycle Methods</h2>
+      <hr/>
+      <MyComponent/>
     </>
   );
 }
