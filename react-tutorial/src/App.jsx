@@ -16,7 +16,7 @@ import FormComponent4 from './components/FormComponent4';
 import MyComponent from './components/MyComponent';
 import FragmentDemo from './components/FragmentDemo';
 import SquareCalculator from './components/SquareCalculator';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 function App() {
   const isPrimary = true; // you can change this to `false` to see the effect
@@ -24,6 +24,15 @@ function App() {
 
   const [number, setNumber] = useState(1);
   const [count, setCount] = useState(0);
+
+  const [count1, setCount1] = useState(0);
+  const [text, setText] = useState('');
+
+  // A simple calculation that doubles the count
+  const doubleCount = useMemo(() => {
+    console.log("Calculating double count...");
+    return count1 * 2;
+  }, [count1]);  // Recalculates only when `count` changes
   return (
     <>
       <h2>Props</h2>
@@ -69,6 +78,24 @@ function App() {
       <SquareCalculator number={number} />
       <button onClick={() => setCount(count + 1)}>Increment Count: {count}</button>
       <button onClick={() => setNumber(number + 1)}>Increase Number</button>
+      <h2>useMemo</h2>
+      <hr/>
+      <div>
+      <h2>Double Count: {doubleCount}</h2>
+
+      {/* Button to increase the count */}
+      <button onClick={() => setCount1(count1 + 1)}>Increment Count</button>
+      
+      {/* Input field to change text */}
+      <input 
+        type="text" 
+        value={text} 
+        onChange={(e) => setText(e.target.value)} 
+        placeholder="Type something..."
+      />
+      
+      <p>Typed Text: {text}</p>
+    </div>
     </>
   );
 }
