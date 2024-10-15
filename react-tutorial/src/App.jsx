@@ -16,7 +16,7 @@ import FormComponent4 from './components/FormComponent4';
 import MyComponent from './components/MyComponent';
 import FragmentDemo from './components/FragmentDemo';
 import SquareCalculator from './components/SquareCalculator';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 
 function App() {
   const isPrimary = true; // you can change this to `false` to see the effect
@@ -33,6 +33,16 @@ function App() {
     console.log("Calculating double count...");
     return count1 * 2;
   }, [count1]);  // Recalculates only when `count` changes
+
+  const inputRef = useRef(null); // Creating a ref for the input element
+  const [text1, setText1] = useState('');
+
+  // Function to focus on the input field using the ref
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+
   return (
     <>
       <h2>Props</h2>
@@ -95,6 +105,23 @@ function App() {
       />
       
       <p>Typed Text: {text}</p>
+    </div>
+    <h2>useRef</h2>
+    <hr/>
+    <div>
+      {/* Input element with ref */}
+      <input 
+        ref={inputRef} 
+        type="text" 
+        value={text1} 
+        onChange={(e) => setText1(e.target.value)} 
+        placeholder="Type something..."
+      />
+
+      {/* Button to focus on the input element */}
+      <button onClick={focusInput}>Focus Input</button>
+
+      <p>Typed Text: {text1}</p>
     </div>
     </>
   );
