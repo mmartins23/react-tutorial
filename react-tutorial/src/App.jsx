@@ -9,6 +9,10 @@ import StyleSheet from './components/StyleSheet';
 import Inline from './components/Inline';
 import styles from './components/appStyles.module.css';
 import './components/appStyles.css'; 
+import FormComponent from './components/FormComponent';
+import FormComponent2 from './components/FormComponent2';
+import FormComponent3 from './components/FormComponent3';
+import FormComponent4 from './components/FormComponent4';
 
 function App() {
   const isPrimary = true; // you can change this to `false` to see the effect
@@ -41,6 +45,12 @@ function App() {
       <Inline/>
       <h1 className="error">Error</h1>
       <h1 className={styles.success}>Success</h1>
+      <h2>Basics of Form Handling</h2>
+      <hr/>
+      <FormComponent/>
+      <FormComponent2/>
+      <FormComponent3/>
+      <FormComponent4/>
     </>
   );
 }
