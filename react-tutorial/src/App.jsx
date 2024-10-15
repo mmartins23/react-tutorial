@@ -17,6 +17,8 @@ import MyComponent from './components/MyComponent';
 import FragmentDemo from './components/FragmentDemo';
 import SquareCalculator from './components/SquareCalculator';
 import { useState, useMemo, useRef } from 'react';
+import UserProvider from './components/UserProvider';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const isPrimary = true; // you can change this to `false` to see the effect
@@ -123,6 +125,13 @@ function App() {
 
       <p>Typed Text: {text1}</p>
     </div>
+    <UserProvider>
+      <div className="App">
+        <h1>Context API Example</h1>
+        <hr/>
+        <UserProfile />
+      </div>
+    </UserProvider>
     </>
   );
 }
