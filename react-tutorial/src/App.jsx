@@ -1,12 +1,18 @@
 import './App.css';
-import Counter from './assets/components/Counter';
-import FunctionClick from './assets/components/FunctionClick';
-import Greet from './assets/components/Greet';
-import Message from './assets/components/Message';
-import PersonList from './assets/components/PersonList';
-import UserGreeting from './assets/components/UserGreeting';
+import Counter from './components/Counter';
+import FunctionClick from './components/FunctionClick';
+import Greet from './components/Greet';
+import Message from './components/Message';
+import PersonList from './components/PersonList';
+import UserGreeting from './components/UserGreeting';
+import StyleSheet from './components/StyleSheet';
+import Inline from './components/Inline';
+import styles from './components/appStyles.module.css';
+import './components/appStyles.css'; 
 
 function App() {
+  const isPrimary = true; // you can change this to `false` to see the effect
+  const className = isPrimary ? 'primary' : '';
   return (
     <>
       <h2>Props</h2>
@@ -29,6 +35,12 @@ function App() {
       <h2>List Rendering</h2>
       <hr />
       <PersonList />
+      <h2>Styling and CSS Basics</h2>
+      <hr/>
+      <StyleSheet className={className}/>
+      <Inline/>
+      <h1 className="error">Error</h1>
+      <h1 className={styles.success}>Success</h1>
     </>
   );
 }
